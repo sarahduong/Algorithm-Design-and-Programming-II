@@ -1,6 +1,4 @@
 # Algorithm Design and Programming II - CS 2050
-Algorithm Design and Programming II - CS 2050 - C Programs
-
 Course Description: 
 A study of fundamental techniques and algorithms for representing and manipulating data structures. Topics include data abstraction, recursion, stacks, queues, linked lists, trees, efficient methods of sorting and searching, and Big-O analysis.
 
