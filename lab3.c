@@ -23,27 +23,31 @@ int * readIntAgeIntoArray(FILE* fp, int* totalNumOfEmployee, float* averageAge)
  
     int * array; // create array to hold floats (pointer)
     array = malloc(*totalNumOfEmployee * sizeof(int)); // allocate memory for array
-
-    *array = *(array+1); // start array at second value in file
-
-    int i;        
-    // for loop stores float values from file into array
-    for(i=0; i<*totalNumOfEmployee; i++)
+    if(array == NULL)
     {
-        fscanf(fp, "%d", (array+i));
-
+       printf("Memory allocation failed.");
     }
-
-    // Calculate average
-    i=0;
-    float addedAge = 0; // create variable to store running total calculation
-    for(i=0; i<*totalNumOfEmployee; i++)
+    else
     {
-        addedAge = addedAge + *(array+i); // running total
+      *array = *(array+1); // start array at second value in file
+
+      int i;        
+      // for loop stores float values from file into array
+      for(i=0; i<*totalNumOfEmployee; i++)
+      {
+         fscanf(fp, "%d", (array+i));
+      }
+
+      // Calculate average
+      i=0;
+      float addedAge = 0; // create variable to store running total calculation
+      for(i=0; i<*totalNumOfEmployee; i++)
+      {
+           addedAge = addedAge + *(array+i); // running total
+      }
+
+         *averageAge = (float)(addedAge) / (*totalNumOfEmployee); // calculate average, store into *averageAge
     }
-
-    *averageAge = (float)(addedAge) / (*totalNumOfEmployee); // calculate average, store into *averageAge
-
     return array; // return values in array
 }
 
@@ -92,5 +96,6 @@ int main()
         printf("Largest age is %d, smallest age is %d\n", maxAge, minAge); // print maxAge and minAge
         freeIntArray(&returnedArray); // call function to free malloced memory
     }
+    fclose(fp);
     return 0;
 }
