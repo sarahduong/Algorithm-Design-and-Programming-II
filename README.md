@@ -1,4 +1,4 @@
-# CS_2050
+# Algorithm Design and Programming II - CS 2050
 Algorithm Design and Programming II - CS 2050 - C Programs
 Course Description: 
 
