@@ -7,7 +7,7 @@ typedef struct nodestruct
     struct nodestruct *next;
 } Node;
 
-typedef struct liststruct
+typedef struct
 {
     Node * head;
     Node * tail;
