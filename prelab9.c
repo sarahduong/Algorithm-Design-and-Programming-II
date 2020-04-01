@@ -170,11 +170,14 @@ List * copyList(List * list)
 
 void freeList(List * list)
 {
-   Node * p = list->head;
+    Node * p = list->head;
+   
+    //free the allocated memory
     while(p != NULL)
     {
+        list->head = p->next;
         free(p);
-        p = p->next; // move pointer up one
+        p = list->head;
     }
-    free(list); // free head pointer
+    free(list); // free head
 }
