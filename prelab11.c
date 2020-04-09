@@ -118,3 +118,17 @@ void printQueue(Queue list)
         p = p->next;
     }
 }
+
+/* this function frees all allocated memory */
+void freeQueue(Queue list)
+{
+    Student * p;
+    p = queue.list->head;  // set running node to beginning of list
+    while(p != NULL)
+    {
+        queue.list->head = p->nextPtr;
+        free(p); // free p
+        p = queue.list->head;
+    }
+    free(queue.list); // free head
+}
