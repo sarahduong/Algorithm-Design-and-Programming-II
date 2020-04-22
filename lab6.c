@@ -40,7 +40,7 @@ int main(void)
         pEmpArray = readRecordFile(fPtr);
         
         // TEST FUNCTIONS
-        /*
+        
         int numRec = getSize(pEmpArray);
         printf("size: %d", numRec);
         
@@ -66,7 +66,7 @@ int main(void)
         {
             printf("\nEmployee %d's Adjusted Salary: %.2f \n", i, pEmpArray[i].salary);
         }
-        */
+        
 
        freeRecordArray(pEmpArray); // frees malloced memory
     }
